@@ -1,0 +1,97 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Nim Run",
+            "type": "shell",
+            "command": "nim r ${file}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nim Compile",
+            "type": "shell",
+            "command": "nim compile ${file}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Build",
+            "type": "shell",
+            "command": "nimble build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Build(Debug)",
+            "type": "shell",
+            "command": "nimble build --outdir:${workspaceFolder}/tests -d:debug --debugger:native ;mv -Force ${workspaceFolder}/${workspaceFolderBasename}.exe ${workspaceFolder}/tests",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Install",
+            "type": "shell",
+            "command": "nimble install -y",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Uninstall",
+            "type": "shell",
+            "command": "nimble Uninstall ${workspaceFolderBasename} -y",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Doc",
+            "type": "shell",
+            "command": "nimble doc --project --index:on --outdir:${workspaceFolder}/doc ${workspaceFolder}/src/${workspaceFolderBasename}.nim",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Test",
+            "type": "shell",
+            "command": "nimble test",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nimble Test(Debug)",
+            "type": "shell",
+            "command": "nimble test -d:debug --debugger:native",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+    ]
+}
